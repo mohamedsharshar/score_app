@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+use App\Models\Analysis;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -64,4 +65,14 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    // app/Models/User.php
+
+
+public function creditReport()
+{
+    return $this->hasOne(CreditReport::class);
+}
+
+
+
 }
