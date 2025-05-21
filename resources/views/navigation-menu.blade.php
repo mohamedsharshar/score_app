@@ -213,7 +213,38 @@
                         @endforeach
                     @endif
                 @endif
+
+                <!-- Manage Banks -->
+                <li>
+                    @if(Auth::check() && Auth::user()->is_admin)
+                        <a href="{{ route('banks.index') }}" class="block px-4 py-2 hover:bg-gray-100">Manage Banks</a>
+                    @endif
+                </li>
             </div>
         </div>
     </div>
+
+    <button id="darkModeToggle" class="fixed bottom-6 right-6 z-50 bg-gray-800 text-white px-4 py-2 rounded-full shadow-lg focus:outline-none">
+        Toggle Dark Mode
+    </button>
+    <script>
+        // Dark mode logic with localStorage
+        function setDarkMode(on) {
+            if(on) {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('darkMode', 'on');
+            } else {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('darkMode', 'off');
+            }
+        }
+        document.getElementById('darkModeToggle').onclick = function() {
+            const isDark = document.documentElement.classList.contains('dark');
+            setDarkMode(!isDark);
+        };
+        // On load, persist dark mode
+        if(localStorage.getItem('darkMode') === 'on') {
+            setDarkMode(true);
+        }
+    </script>
 </nav>

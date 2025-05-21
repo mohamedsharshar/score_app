@@ -30,6 +30,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'is_admin',
     ];
 
     /**
@@ -73,6 +74,9 @@ public function creditReport()
     return $this->hasOne(CreditReport::class);
 }
 
-
+public function isAdmin()
+{
+    return $this->is_admin;
+}
 
 }

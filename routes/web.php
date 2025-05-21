@@ -23,7 +23,12 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/', function () {
-        return view('dashboard');
+        $user = \Illuminate\Support\Facades\Auth::user();
+        if ($user && $user->is_admin) {
+            return view('dashboard');
+        } else {
+            return view('user-dashboard');
+        }
     })->name('dashboard');
 });
 

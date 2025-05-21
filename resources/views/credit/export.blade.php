@@ -1,19 +1,14 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>تقرير الجدارة الائتمانية</title>
+    <title>Credit Report</title>
     <style>
-        @font-face {
-            font-family: 'arabic';
-            src: url("{{ base_path('fonts/Amiri-Regular.ttf') }}") format('truetype');
-        }
-
         body {
-            font-family: 'arabic', sans-serif;
-            direction: rtl;
-            text-align: right;
+            font-family: DejaVu Sans, Arial, sans-serif;
+            direction: ltr;
+            text-align: left;
         }
 
         h2 {
@@ -40,17 +35,17 @@
 </head>
 
 <body>
-    <h2>تقرير الجدارة الائتمانية</h2>
+    <h2>Credit Report</h2>
     <table>
         <thead>
             <tr>
-                <th>التاريخ</th>
-                <th>النتيجة</th>
-                <th>نسبة الدفعات</th>
-                <th>معدل الاستخدام</th>
-                <th>عمر الحسابات</th>
-                <th>تنوع الائتمان</th>
-                <th>الاستعلامات الجديدة</th>
+                <th>Date</th>
+                <th>Score</th>
+                <th>On Time Payments</th>
+                <th>Utilization Rate</th>
+                <th>Account Age</th>
+                <th>Credit Mix</th>
+                <th>New Inquiries</th>
             </tr>
         </thead>
         <tbody>
